@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Castle.Windsor;
+using MyFirstGitProject.Interceptor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +15,11 @@ namespace MyFirstGitProject
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            var container = new WindsorContainer();
+            container.Install(new ServiceInstaller());
+
+            
         }
     }
 }
