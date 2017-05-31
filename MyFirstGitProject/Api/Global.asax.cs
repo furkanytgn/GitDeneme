@@ -17,13 +17,13 @@ namespace Api
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
-           /* var container = new WindsorContainer();
+            var container = new WindsorContainer();
             container.Install(new ServiceInstaller());
             container.Install(new WebApiControllerInstaller());
             GlobalConfiguration.Configuration.Services.Replace(
                 typeof(IHttpControllerActivator),
                 new ApiControllerActivator(container));
-            GlobalConfiguration.Configure(WebApiConfig.Register);*/
+            GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
 }
