@@ -14,13 +14,13 @@ namespace MyFirstGitProject.Interceptor
             var serializer = new JavaScriptSerializer();
             var parametersJson = serializer.Serialize(invocation.Arguments);
 
-            System.Diagnostics.Debug.WriteLine("Request of " + invocation.Method.Name + " is " + parametersJson);
+            System.Diagnostics.Debug.WriteLine("İstek yapilan metod: " + invocation.Method.Name + " Parametreleri: " + parametersJson);
 
             invocation.Proceed();
 
             var returnValueJson = serializer.Serialize(invocation.ReturnValue);
            
-            System.Diagnostics.Debug.WriteLine("Response of " + invocation.Method.Name + " is: " + invocation.ReturnValue);
+            System.Diagnostics.Debug.WriteLine("Cevap Alinan Metod: " + invocation.Method.Name + " Geri Donen Deger: " + invocation.ReturnValue);
         }
     }
 }
